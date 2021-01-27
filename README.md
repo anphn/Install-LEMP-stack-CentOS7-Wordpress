@@ -58,5 +58,5 @@
 
 ```sudo yum install php php-mysqlnd php-fpm```
 
-```php-fpm -v #kiểm tra version vừa cài```
+```php-fpm -v ``` #kiểm tra version vừa cài
 
