@@ -9,6 +9,12 @@
 
 - php-fpm v7.3 ++ [repo php-fpm](http://rpms.remirepo.net/enterprise/remi-release-7.rpm)
 
-- wordpress newversion [wordpress](http://wordpress.org/latest.tar.gz)
+- wordpress newversion [down wordpress](http://wordpress.org/latest.tar.gz)
 
-## 
+## 1. Install Nginx
+
+- Cài Nginx v1.16.1 với repo có sẵn epel-release
+
+```sudo yum install nginx```
+
+
