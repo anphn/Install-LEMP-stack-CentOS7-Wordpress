@@ -17,7 +17,7 @@
 
 ```sudo yum install nginx```
 
-```nginx -v   #kiểm tra version vừa cài```
+```nginx -v ```  ## kiểm tra version vừa cài
 
 - Bật service và cho phép cổng firewall
 
@@ -37,7 +37,7 @@
 ```sudo yum install MariaDB-server MariaDB-client```
 
 
-```mariadb -v  #kiểm tra version vừa cài```
+```mariadb -v ``` ## kiểm tra version vừa cài
 
 - Bật service và install bảo mật cho database
 
@@ -58,5 +58,5 @@
 
 ```sudo yum install php php-mysqlnd php-fpm```
 
-```php-fpm -v ``` #kiểm tra version vừa cài
+```php-fpm -v ```   ## kiểm tra version vừa cài
 
