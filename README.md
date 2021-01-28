@@ -157,9 +157,47 @@ location ~ \.php {
 }
 ```
 
+## IV. Install Wordpress
+
+### 1. Cài Wordpress
+
+Cài Wordpress version mới nhất
+
+`cd /tmp && wget http://wordpress.org/latest.tar.gz`
+
+Giải nén file vừa cài vào thư mục chứa
+
+`tar -xvzf latest.tar.gz -C /home/www/test.com`
+
+Phân quyền cho wordpress
+
+`chown -R nginx /home/www/test.com/wordpress`
+
+Copy file conf mẫu
+
+`cp /home/www/test.com/wordpress/wp-config-sample.php /home/www/test.com/wordpress/wp-config.php`
+
+Sửa file conf vừa copy thêm Database
+
+`vim /home/www/test.com/wordpress/wp-config.php`
+
+Thêm các dòng:
+
+```
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'wordpress' );
+/** MySQL database username */
+define( 'DB_USER', 'wordpress' );
+/** MySQL database password */
+define( 'DB_PASSWORD', 'password' );
+/** MySQL hostname */
+define( 'DB_HOST', 'localhost' );
+```
+
+Kết quả khi nhập domain VitualHost
 
 
-
+<img src=https://kinsta.com/wp-content/uploads/2018/12/wordpress-install-language.png>
 
 
 
