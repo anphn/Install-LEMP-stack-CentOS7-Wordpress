@@ -199,9 +199,19 @@ Kết quả khi nhập domain VitualHost
 
 <img src=https://kinsta.com/wp-content/uploads/2018/12/wordpress-install-language.png>
 
+### 2. Phân quyền cho folder và file 
+
+*Theo quy chuẩn Wordpress để đảm bảo an toàn, các folder và file trong wordpress sẽ được phân quyền hợp lí: [link tham khảo](https://www.thuysys.com/domain-hosting/wordpress-co-ban/tim-hieu-chmod-chown-cach-sua-loi-phan-quyen-wordpress-tren-linux.html)*
 
 
 
+- Phân quyền Folder 755
+
+`find /home/www/test.com/wordpress -type d -print0 | xargs -0 chmod 755`
+
+- Phân quyền File 644
+
+`find /home/www/test.com/wordpress -type f -print0 | xargs -0 chmod 644`
 
 
 
