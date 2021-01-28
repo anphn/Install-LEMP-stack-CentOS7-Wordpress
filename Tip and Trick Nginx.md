@@ -138,6 +138,21 @@ location ~ /\. {
     deny all;
 }
 ```
+## Nginx Tip 8. - Đổi định dạng đuôi file
+
+Theo yêu cầu giấu đuôi .php, .html có thể đổi sang đuôi .* để chạy file 
+
+- Chỉnh sửa trong file `vim /etc/nginx/mime.types`
+
+Dòng 2 `text/html  html htm shtml in` thêm đuôi .* mà mình muốn (Trong TH này thêm đuôi in, kiểm tra đuôi in đã có trong file conf này chưa )
+
+- Chỉnh sửa trong file `vim /etc/php-fpm.d/www.conf`
+
+Thêm dòng: `security.limit_extensions = .php .in` và đuôi .in 
+
+- Reload lại Nginx và php-fpm
+
+
 
 # Tips và tricks cấu hình PHP-FPM 
 
