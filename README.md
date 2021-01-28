@@ -31,11 +31,11 @@
 
 ### 1. Tạo VitualHost chạy HTTP
 
-Tạo file .conf trong `/etc/nginx/conf.d/`
+- Tạo file .conf trong `/etc/nginx/conf.d/`
 
 `vim /etc/nginx/conf.d/test.com.conf`
 
-File cấu hình có các tham số sau:
+- File cấu hình có các tham số sau:
 
 ```
 server{
@@ -49,16 +49,47 @@ server{
      }
 }
 ```
-Tạo thư mục để file .html theo đường dẫn `/home/www/test.com`
+- Tạo thư mục để file .html theo đường dẫn `/home/www/test.com`
 
 `mkdir -p /home/www/test.com`
 
-Tạo file .html để thử chạy
+- Tạo file .html để thử chạy
 
 `vim /home/www/test.com/index.html`
 
+### 2. Tạo VitualHost chạy HTTPS (Local)
 
+- Tạo key và tự ký trên local
 
+Di chuyển vào: `cd /etc/pki/tls/certs`
+
+Tạo khóa: `make server.key` (Tạo passphrase)
+
+Bỏ passphrase tron key: `openssl rsa -in server.key -out server.key`
+
+Tự ký: `make server.csr`
+
+Xác nhận và cấp hiệu lực key: `openssl x509 -in server.csr -out server.crt -req -signkey server.key -days 3650`
+
+- Conf file cấu hình VitualHost chạy 443 và đường dẫn xác thực SSL
+
+`vim /etc/nginx/conf.d/test.com.conf`
+
+File conf như sau:
+
+```
+    server {
+#       listen       80;
+        listen       443 ssl;
+        server_name  test.com;
+        root         /home/www/test.com;
+
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+        ssl_ciphers ECDHE+RSAGCM:ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:!aNULL!eNull:!EXPORT:!DES:!3DES:!MD5:!DSS;
+        ssl_certificate      /etc/pki/tls/certs/server.crt;
+        ssl_certificate_key  /etc/pki/tls/certs/server.key;
+```
 
 ## II. Install Mariadb
 
