@@ -79,11 +79,12 @@ File conf như sau:
 
 ```
     server {
-#       listen       80;
+        listen       80;
         listen       443 ssl;
         server_name  test.com;
         root         /home/www/test.com;
-
+        error_log /var/log/nginx/test.com_error.log error;
+        access_log /var/log/nginx/test.com_access.log main
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_prefer_server_ciphers on;
         ssl_ciphers ECDHE+RSAGCM:ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:!aNULL!eNull:!EXPORT:!DES:!3DES:!MD5:!DSS;
