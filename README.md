@@ -36,7 +36,7 @@ Cài LEMP, Wordpress trên CentOS7
 
 `vim /etc/nginx/conf.d/test.com.conf`
 
-- File cấu hình có các tham số sau:
+- File cấu hình như sau:
 
 ```
 server{
@@ -106,12 +106,11 @@ File conf như sau:
 
 ```sudo yum install MariaDB-server MariaDB-client```
 
+```systemctl start mariadb```
 
 ```mariadb -v ``` ## kiểm tra version vừa cài
 
-- Bật service và install bảo mật cho database
-
-```systemctl start mariadb```
+- Install bảo mật cho database
 
 ```mysql_secure_installation  #set passwd root cho database```
 
@@ -147,7 +146,7 @@ SHOW GRANTS FOR 'user'@localhost;
 
 ## III. Install PHP
 
-- Cài php-fpm v7.4 với repo có các version đầy đủ
+- Cài php-fpm với repo có các version đầy đủ
 
 ```sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm```
 
@@ -156,6 +155,8 @@ SHOW GRANTS FOR 'user'@localhost;
 ```yum-config-manager --enable remi-php74 ```
 
 ```sudo yum install php php-mysqlnd php-fpm```
+
+`systemctl start php-fpm`
 
 ```php-fpm -v ```   ## kiểm tra version vừa cài
 
