@@ -50,9 +50,11 @@ server{
      }
 }
 ```
-- Tạo thư mục để file .html theo đường dẫn `/home/www/test.com`
+- Tạo thư mục và phân quyền để file .html theo đường dẫn `/home/www/test.com`
 
 `mkdir -p /home/www/test.com`
+
+`chown -R nginx:nginx /home/www/test.com`
 
 - Tạo file .html để thử chạy
 
