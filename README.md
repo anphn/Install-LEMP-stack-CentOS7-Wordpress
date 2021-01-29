@@ -62,6 +62,11 @@ server{
 
 ### 2. Tạo VitualHost chạy HTTPS (Local)
 
+- Cài mod_ssl và openssl
+
+`yum instal mod_ssl openssl -y`
+
+
 - Tạo key và tự ký trên local
 
 Di chuyển vào: `cd /etc/pki/tls/certs`
