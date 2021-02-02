@@ -64,7 +64,7 @@ server{
 
 - Cài mod_ssl và openssl
 
-`yum instal mod_ssl openssl -y`
+`yum install mod_ssl openssl -y`
 
 
 - Tạo key và tự ký trên local
