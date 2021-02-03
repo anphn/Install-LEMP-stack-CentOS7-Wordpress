@@ -19,3 +19,11 @@ https://nginx.org/en/docs/http/ngx_http_core_module.html#tcp_nodelay
 https://nginx.org/en/docs/http/server_names.html
 
 https://nginx.org/en/docs/http/ngx_http_core_module.html#http
+
+## PHP-FPM
+
+https://viblo.asia/p/tuning-cho-php-fpm-WAyK8eanZxX?fbclid=IwAR1b93_favPSAJNCEV6UKmIMaiRj_A6Cp39HLWzMIpsmgLYBQYUv5byfy-4
+
+https://viblo.asia/p/quan-ly-php-fpm-process-gGJ59O1JZX2
+
+https://vietnetwork.vn/php-hypertext-preprocessor/su-khac-nhau-giua-cac-php-handler-dso-cgi-suphp-fastcgi/msg68489/
